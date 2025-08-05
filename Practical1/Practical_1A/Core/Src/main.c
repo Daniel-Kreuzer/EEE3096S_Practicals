@@ -46,8 +46,8 @@ TIM_HandleTypeDef htim16;
 /* USER CODE BEGIN PV */
 // TODO: Define input variables
 uint8_t mode = 0; // Tells us whether we're in mode 1,2, or 3
-uint8_t led_index = 0; // Index of LED to turn off or on in mode 1 or 2 respectively
-uint8_t direction = 1; // Tells us whether to go forward (1) or backwards (-1)
+uint8_t current_led_index = 0; // Index of LED to turn off or on in mode 1 or 2 respectively
+uint8_t direction = 1;
 
 /* USER CODE END PV */
 
@@ -94,7 +94,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   // TODO: Start timer TIM16
-  HAL_TIME_Base_Start_IT(&htim16);
+  HAL_TIM_Base_Start_IT(&htim16);
  
 
   /* USER CODE END 2 */
@@ -111,20 +111,49 @@ int main(void)
     // TODO: Check pushbuttons to change timer delay
 	if (HAL_GPIO_ReadPin(Button0_GPIO_Port,Button0_Pin) == GPIO_PIN_RESET)
 	{
-		if (__HAL_TIM_GET_AUTORELOAD(&htim16) == 999) // Note. Try with manual registers
+		HAL_TIM_Base_Stop_IT(&htim16);
+		if (htim16.Init.Period == 999) // Note. Try with manual registers
 		{
-			__HAL_TIM_SET_AUTORELOAD(&htim16,499);
-		}
-		if (__HAL_TIM_GET_AUTORELOAD(&htim16) == 499)
+			htim16.Init.Period = 499;
+		} else
 		{
-			__HAL_TIM_SET_AUTORELOAD(&htim16,999);
+			htim16.Init.Period = 999;
 		}
+		HAL_TIM_Base_Init(&htim16);
+		HAL_TIM_Base_Start_IT(&htim16);
+
 		while (HAL_GPIO_ReadPin(Button0_GPIO_Port,Button0_Pin) == GPIO_PIN_RESET);
-		HAL_delay(50);
+		HAL_Delay(50); // For Button Debounce
 	}
+	if (HAL_GPIO_ReadPin(Button1_GPIO_Port,Button1_Pin) == GPIO_PIN_RESET)
+	{
+		mode=1;
+		current_led_index=0;
+		direction=1;
+		HAL_TIM_Base_Init(&htim16);
+		HAL_TIM_Base_Start_IT(&htim16);
 
-    
-
+		while (HAL_GPIO_ReadPin(Button1_GPIO_Port,Button1_Pin) == GPIO_PIN_RESET); // Wait until the button stops being pressed
+		HAL_Delay(50); // For Button Debounce
+	}
+	if (HAL_GPIO_ReadPin(Button2_GPIO_Port,Button2_Pin) == GPIO_PIN_RESET)
+	{
+		mode=2;
+		current_led_index=7;
+		direction=-1;
+		HAL_TIM_Base_Init(&htim16);
+		HAL_TIM_Base_Start_IT(&htim16);
+		while (HAL_GPIO_ReadPin(Button2_GPIO_Port,Button2_Pin) == GPIO_PIN_RESET); // Wait until the button stops being pressed
+		HAL_Delay(50); // For Button Debounce
+	}
+	if (HAL_GPIO_ReadPin(Button3_GPIO_Port,Button3_Pin) == GPIO_PIN_RESET)
+	{
+		mode=3;
+		HAL_TIM_Base_Init(&htim16);
+		HAL_TIM_Base_Start_IT(&htim16);
+		while (HAL_GPIO_ReadPin(Button3_GPIO_Port,Button3_Pin) == GPIO_PIN_RESET); // Wait until the button stops being pressed
+		HAL_Delay(50); // For Button Debounce
+	}
   }
   /* USER CODE END 3 */
 }
@@ -334,8 +363,95 @@ void TIM16_IRQHandler(void)
 {
 	// Acknowledge interrupt
 	HAL_TIM_IRQHandler(&htim16);
+	// Mode 1 for all lights on
+	if (mode==1) {
+		HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(LED3_GPIO_Port, LED3_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(LED4_GPIO_Port, LED4_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(LED5_GPIO_Port, LED5_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(LED6_GPIO_Port, LED6_Pin, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(LED7_GPIO_Port, LED7_Pin, GPIO_PIN_RESET);
 
-	// TODO: Change LED pattern
+		switch(current_led_index) {
+		case 0:
+			HAL_GPIO_WritePin(LED0_GPIO_Port,LED0_Pin,GPIO_PIN_SET);
+			break;
+		case 1:
+			HAL_GPIO_WritePin(LED1_GPIO_Port,LED1_Pin,GPIO_PIN_SET);
+			break;
+		case 2:
+			HAL_GPIO_WritePin(LED2_GPIO_Port,LED2_Pin,GPIO_PIN_SET);
+			break;
+		case 3:
+			HAL_GPIO_WritePin(LED3_GPIO_Port,LED3_Pin,GPIO_PIN_SET);
+			break;
+		case 4:
+			HAL_GPIO_WritePin(LED4_GPIO_Port,LED4_Pin,GPIO_PIN_SET);
+			break;
+		case 5:
+			HAL_GPIO_WritePin(LED5_GPIO_Port,LED5_Pin,GPIO_PIN_SET);
+			break;
+		case 6:
+			HAL_GPIO_WritePin(LED6_GPIO_Port,LED6_Pin,GPIO_PIN_SET);
+			break;
+		case 7:
+			HAL_GPIO_WritePin(LED7_GPIO_Port,LED7_Pin,GPIO_PIN_SET);
+			break;
+		}
+
+		current_led_index += direction;
+		if (current_led_index==7) {direction=-1;}
+		if (current_led_index==0) {direction=1;}
+	}
+
+	// Mode 2 for all lights off except 1
+	else if (mode ==2){
+		HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(LED3_GPIO_Port, LED3_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(LED4_GPIO_Port, LED4_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(LED5_GPIO_Port, LED5_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(LED6_GPIO_Port, LED6_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(LED7_GPIO_Port, LED7_Pin, GPIO_PIN_SET);
+
+		switch(current_led_index) {
+		case 0:
+			HAL_GPIO_WritePin(LED0_GPIO_Port,LED0_Pin,GPIO_PIN_RESET);
+			break;
+		case 1:
+			HAL_GPIO_WritePin(LED1_GPIO_Port,LED1_Pin,GPIO_PIN_RESET);
+			break;
+		case 2:
+			HAL_GPIO_WritePin(LED2_GPIO_Port,LED2_Pin,GPIO_PIN_RESET);
+			break;
+		case 3:
+			HAL_GPIO_WritePin(LED3_GPIO_Port,LED3_Pin,GPIO_PIN_RESET);
+			break;
+		case 4:
+			HAL_GPIO_WritePin(LED4_GPIO_Port,LED4_Pin,GPIO_PIN_RESET);
+			break;
+		case 5:
+			HAL_GPIO_WritePin(LED5_GPIO_Port,LED5_Pin,GPIO_PIN_RESET);
+			break;
+		case 6:
+			HAL_GPIO_WritePin(LED6_GPIO_Port,LED6_Pin,GPIO_PIN_RESET);
+			break;
+		case 7:
+			HAL_GPIO_WritePin(LED7_GPIO_Port,LED7_Pin,GPIO_PIN_RESET);
+			break;
+		}
+		current_led_index += direction;
+		if (current_led_index==7) {direction=-1;}
+		if (current_led_index==0) {direction=1;}
+
+	}
+
+	else if (mode==3){
+
+	}
 
 
 
