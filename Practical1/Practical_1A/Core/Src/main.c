@@ -45,7 +45,9 @@ TIM_HandleTypeDef htim16;
 
 /* USER CODE BEGIN PV */
 // TODO: Define input variables
-
+uint8_t mode = 0; // Tells us whether we're in mode 1,2, or 3
+uint8_t led_index = 0; // Index of LED to turn off or on in mode 1 or 2 respectively
+uint8_t direction = 1; // Tells us whether to go forward (1) or backwards (-1)
 
 /* USER CODE END PV */
 
@@ -92,7 +94,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   // TODO: Start timer TIM16
-
+  HAL_TIME_Base_Start_IT(&htim16);
  
 
   /* USER CODE END 2 */
@@ -107,7 +109,19 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
     // TODO: Check pushbuttons to change timer delay
-
+	if (HAL_GPIO_ReadPin(Button0_GPIO_Port,Button0_Pin) == GPIO_PIN_RESET)
+	{
+		if (__HAL_TIM_GET_AUTORELOAD(&htim16) == 999) // Note. Try with manual registers
+		{
+			__HAL_TIM_SET_AUTORELOAD(&htim16,499);
+		}
+		if (__HAL_TIM_GET_AUTORELOAD(&htim16) == 499)
+		{
+			__HAL_TIM_SET_AUTORELOAD(&htim16,999);
+		}
+		while (HAL_GPIO_ReadPin(Button0_GPIO_Port,Button0_Pin) == GPIO_PIN_RESET);
+		HAL_delay(50);
+	}
 
     
 
