@@ -21,8 +21,11 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <stdio.h>
 #include <stdint.h>
 #include "stm32f0xx.h"
+#include "lcd_stm32f0.h"
+#include "lcd_stm32f0.c"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -48,6 +51,8 @@ TIM_HandleTypeDef htim16;
 uint8_t mode = 0; // Tells us whether we're in mode 1,2, or 3
 uint8_t current_led_index = 0; // Index of LED to turn off or on in mode 1 or 2 respectively
 uint8_t direction = 1;
+uint8_t k, f;
+uint8_t binary;
 
 /* USER CODE END PV */
 
@@ -55,6 +60,10 @@ uint8_t direction = 1;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_TIM16_Init(void);
+
+volatile uint8_t led_state = 0;
+volatile uint32_t random_period = 0;
+volatile uint8_t on = 0;
 /* USER CODE BEGIN PFP */
 void TIM16_IRQHandler(void);
 /* USER CODE END PFP */
@@ -128,6 +137,7 @@ int main(void)
 	if (HAL_GPIO_ReadPin(Button1_GPIO_Port,Button1_Pin) == GPIO_PIN_RESET)
 	{
 		mode=1;
+		htim16.Init.Period = 999;
 		current_led_index=0;
 		direction=1;
 		HAL_TIM_Base_Init(&htim16);
@@ -139,6 +149,7 @@ int main(void)
 	if (HAL_GPIO_ReadPin(Button2_GPIO_Port,Button2_Pin) == GPIO_PIN_RESET)
 	{
 		mode=2;
+		htim16.Init.Period = 999;
 		current_led_index=7;
 		direction=-1;
 		HAL_TIM_Base_Init(&htim16);
@@ -162,6 +173,7 @@ int main(void)
   * @brief System Clock Configuration
   * @retval None
   */
+
 void SystemClock_Config(void)
 {
   LL_FLASH_SetLatency(LL_FLASH_LATENCY_0);
@@ -363,8 +375,9 @@ void TIM16_IRQHandler(void)
 {
 	// Acknowledge interrupt
 	HAL_TIM_IRQHandler(&htim16);
-	// Mode 1 for all lights on
-	if (mode==1) {
+	// Mode 1 for all lights off except one
+	if (mode==1)
+	{
 		HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_RESET);
 		HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
 		HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, GPIO_PIN_RESET);
@@ -406,8 +419,10 @@ void TIM16_IRQHandler(void)
 		if (current_led_index==0) {direction=1;}
 	}
 
-	// Mode 2 for all lights off except 1
-	else if (mode ==2){
+	// Mode 2 for all lights on except 1
+	else
+	if (mode ==2)
+	{
 		HAL_GPIO_WritePin(LED0_GPIO_Port, LED0_Pin, GPIO_PIN_SET);
 		HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
 		HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, GPIO_PIN_SET);
@@ -449,14 +464,69 @@ void TIM16_IRQHandler(void)
 
 	}
 
-	else if (mode==3){
+	else
+	if (mode==3)
+	{
+
+		GPIO_TypeDef* GPIOB_Ports[8] = {LED0_GPIO_Port, LED1_GPIO_Port, LED2_GPIO_Port, LED3_GPIO_Port, LED4_GPIO_Port, LED5_GPIO_Port, LED6_GPIO_Port, LED7_GPIO_Port};
+		uint16_t LED_Pins[8] = {LED0_Pin, LED1_Pin, LED2_Pin, LED3_Pin, LED4_Pin, LED5_Pin, LED6_Pin, LED7_Pin};
+		GPIO_PinState pinState;
+		int randomDelay = (rand()%(1500-100+1)) + 100;
+
+
+		if (on == 0)
+		{
+
+			int randomOutput = rand() % 256;
+			binary = randomOutput & 0xFF;
+			__HAL_TIM_SET_AUTORELOAD(&htim16, randomDelay);
+
+			for (int o = 0; o < 8; o++)
+			{
+				if (binary & (1 << o))
+				{
+					pinState = GPIO_PIN_SET;
+				}
+				else
+				{
+					pinState = GPIO_PIN_RESET;
+				}
+
+				HAL_GPIO_WritePin(GPIOB_Ports[o], LED_Pins[o], pinState);
+			}
+
+			on = 1;
+			k = 0;
+		}
+		else // turn-off phase
+		{
+			if (on == 1)
+			{
+				// Skip LEDs that are off
+				while ((k < 8) && !(binary & (1 << k)))
+				{
+					k++; // move to the next LED until we find one that's ON
+				}
+
+				if (k < 8)
+				{
+					HAL_GPIO_WritePin(GPIOB_Ports[k], LED_Pins[k], GPIO_PIN_RESET);
+					__HAL_TIM_SET_AUTORELOAD(&htim16, randomDelay);
+					k++;
+
+
+				}
+				else
+				{
+					// All LEDs processed, go back to ON phase
+					on = 0;
+				}
+			}
+
+		}
 
 	}
-
-
-
 }
-
 
 /* USER CODE END 4 */
 
@@ -464,6 +534,9 @@ void TIM16_IRQHandler(void)
   * @brief  This function is executed in case of error occurrence.
   * @retval None
   */
+
+
+
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
