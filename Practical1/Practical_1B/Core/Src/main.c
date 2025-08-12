@@ -44,6 +44,11 @@
 
 /* USER CODE BEGIN PV */
 //TODO: Define and initialise the global varibales required
+
+uint32_t start_time, end_time;
+uint64_t checksum;
+uint32_t execution_time;
+int side_length[] = {128, 160, 192, 224, 256};
 /*
   start_time
   end_time
@@ -73,8 +78,7 @@ uint64_t calculate_mandelbrot_double(int width, int height, int max_iterations);
   * @brief  The application entry point.
   * @retval int
   */
-int main(void)
-{
+int main(void){
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -99,28 +103,28 @@ int main(void)
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
   //TODO: Turn on LED 0 to signify the start of the operation
-  
-
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
   //TODO: Record the start time
-  
+  start_time=HAL_GetTick();
   
   //TODO: Call the Mandelbrot Function and store the output in the checksum variable defined initially
-  
+  checksum = calculate_mandelbrot_fixed_point_arithmetic(side_length[0],side_length[0],MAX_ITER);
 
   //TODO: Record the end time
-  
+  end_time=HAL_GetTick();
 
   //TODO: Calculate the execution time
-  
+  execution_time= end_time-start_time;
 
   //TODO: Turn on LED 1 to signify the end of the operation
-  
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
 
   //TODO: Hold the LEDs on for a 1s delay
-  
+  HAL_Delay(1000);
 
   //TODO: Turn off the LEDs
-  
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
 
   /* USER CODE END 2 */
 
@@ -203,8 +207,26 @@ static void MX_GPIO_Init(void)
 //TODO: Mandelbroat using variable type integers and fixed point arithmetic
 uint64_t calculate_mandelbrot_fixed_point_arithmetic(int width, int height, int max_iterations){
   uint64_t mandelbrot_sum = 0;
+  int scale = 1000000;
     //TODO: Complete the function implementation
-    
+    for (int y=0; y<height; y++) {
+    	for (int x=0; x<width; x++) {
+    		int64_t x0 = ((int64_t)x*scale*35)/(width*10)-(25*scale)/10;
+    		int64_t y0 = ((int64_t)y*scale*2)/(height)-scale;
+
+
+    		int64_t xi=0;
+    		int64_t yi=0;
+    		int iteration =0;
+    		while (iteration<max_iterations && (((xi*xi)/scale)+((yi*yi)/scale)<=4*scale)) { // Dividing by the scale ensures we aren't...
+    			int64_t tmp = ((xi*xi)/scale)-((yi*yi)/scale); // ...also squaring the scale
+    			yi=((2*xi*yi)/scale)+y0;
+    			xi=tmp+x0;
+    			iteration++;
+    		}
+    		mandelbrot_sum+=iteration;
+    	}
+    }
     return mandelbrot_sum;
 
 }
