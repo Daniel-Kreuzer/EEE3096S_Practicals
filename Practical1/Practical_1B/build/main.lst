@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
   31:Core/Src/main.c **** /* USER CODE END PTD */
   32:Core/Src/main.c **** 
   33:Core/Src/main.c **** /* Private define ------------------------------------------------------------*/
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 2
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 2
 
 
   34:Core/Src/main.c **** /* USER CODE BEGIN PD */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
   88:Core/Src/main.c ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   89:Core/Src/main.c ****   HAL_Init();
   90:Core/Src/main.c **** 
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 3
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 3
 
 
   91:Core/Src/main.c ****   /* USER CODE BEGIN Init */
@@ -141,7 +141,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
  108:Core/Src/main.c ****   start_time=HAL_GetTick();
  109:Core/Src/main.c ****   
  110:Core/Src/main.c ****   //TODO: Call the Mandelbrot Function and store the output in the checksum variable defined initia
- 111:Core/Src/main.c ****   checksum = calculate_mandelbrot_fixed_point_arithmetic(side_length[0],side_length[0],MAX_ITER);
+ 111:Core/Src/main.c ****   checksum = calculate_mandelbrot_fixed_point_arithmetic(side_length[1],side_length[1],MAX_ITER);
  112:Core/Src/main.c **** 
  113:Core/Src/main.c ****   //TODO: Record the end time
  114:Core/Src/main.c ****   end_time=HAL_GetTick();
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
  145:Core/Src/main.c ****   */
  146:Core/Src/main.c **** void SystemClock_Config(void)
  147:Core/Src/main.c **** {
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 4
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 4
 
 
  148:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
   43 000a FFF7FEFF 		bl	memset
   44              	.LVL0:
  185:Core/Src/main.c **** /* USER CODE BEGIN MX_GPIO_Init_1 */
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 5
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 5
 
 
  186:Core/Src/main.c **** /* USER CODE END MX_GPIO_Init_1 */
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
   88              		.loc 1 196 23 is_stmt 0 view .LVU17
   89 0040 0323     		movs	r3, #3
   90 0042 0393     		str	r3, [sp, #12]
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 6
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 6
 
 
  197:Core/Src/main.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
  135              		.loc 1 208 96 is_stmt 0 view .LVU27
  136 0000 F0B5     		push	{r4, r5, r6, r7, lr}
  137              	.LCFI2:
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 7
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 7
 
 
  138              		.cfi_def_cfa_offset 20
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
  216:Core/Src/main.c **** 
  217:Core/Src/main.c **** 
  218:Core/Src/main.c ****     		int64_t xi=0;
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 8
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 8
 
 
  219:Core/Src/main.c ****     		int64_t yi=0;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
  231              	.L6:
  232              		.loc 1 225 17 view .LVU45
  233              	.LBE9:
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 9
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 9
 
 
  221:Core/Src/main.c ****     			int64_t tmp = ((xi*xi)/scale)-((yi*yi)/scale); // ...also squaring the scale
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
  226:Core/Src/main.c ****     		}
  227:Core/Src/main.c ****     		mandelbrot_sum+=iteration;
  281              		.loc 1 227 7 is_stmt 1 view .LVU53
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 10
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 10
 
 
  282              		.loc 1 227 21 is_stmt 0 view .LVU54
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
  328              	.LVL20:
  214:Core/Src/main.c ****     		int64_t y0 = ((int64_t)y*scale*2)/(height)-scale;
  329              		.loc 1 214 15 view .LVU64
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 11
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 11
 
 
  330 00f0 1D4A     		ldr	r2, .L15+12
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
  372 0126 0024     		movs	r4, #0
  373 0128 0293     		str	r3, [sp, #8]
  374 012a 0394     		str	r4, [sp, #12]
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 12
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 12
 
 
  218:Core/Src/main.c ****     		int64_t yi=0;
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
  417 0150 F0BC     		pop	{r4, r5, r6, r7}
  418 0152 BB46     		mov	fp, r7
  419 0154 B246     		mov	r10, r6
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 13
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 13
 
 
  420 0156 A946     		mov	r9, r5
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
  469              		.thumb_func
  471              	Error_Handler:
  472              	.LFB45:
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 14
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 14
 
 
  241:Core/Src/main.c **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
   33:Drivers/CMSIS/Include/cmsis_gcc.h **** 
   34:Drivers/CMSIS/Include/cmsis_gcc.h **** /* Fallback for __has_builtin */
   35:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef __has_builtin
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 15
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 15
 
 
   36:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __has_builtin(x) (0)
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
   90:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
   91:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
   92:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(add
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 16
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 16
 
 
   93:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
  487              	@ 142 "Drivers/CMSIS/Include/cmsis_gcc.h" 1
  488 0000 72B6     		cpsid i
  489              	@ 0 "" 2
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 17
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 17
 
 
  490              		.thumb
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
  536              		.loc 1 154 3 is_stmt 1 view .LVU105
  154:Core/Src/main.c ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
  537              		.loc 1 154 36 is_stmt 0 view .LVU106
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 18
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 18
 
 
  538 0018 0223     		movs	r3, #2
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
  574 003c 6846     		mov	r0, sp
  575 003e FFF7FEFF 		bl	HAL_RCC_ClockConfig
  576              	.LVL37:
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 19
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 19
 
 
  171:Core/Src/main.c ****   {
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
  106:Core/Src/main.c ****   //TODO: Record the start time
  625              		.loc 1 106 3 view .LVU133
  626 000e 174C     		ldr	r4, .L27
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 20
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 20
 
 
  627 0010 0122     		movs	r2, #1
@@ -1161,7 +1161,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
  111:Core/Src/main.c **** 
  640              		.loc 1 111 14 is_stmt 0 view .LVU138
  641 0022 144B     		ldr	r3, .L27+8
- 642 0024 1868     		ldr	r0, [r3]
+ 642 0024 5868     		ldr	r0, [r3, #4]
  643 0026 6422     		movs	r2, #100
  644 0028 0100     		movs	r1, r0
  645 002a FFF7FEFF 		bl	calculate_mandelbrot_fixed_point_arithmetic
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
  668 0048 2000     		movs	r0, r4
  669 004a FFF7FEFF 		bl	HAL_GPIO_WritePin
  670              	.LVL47:
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 21
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 21
 
 
  123:Core/Src/main.c **** 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
  724              		.section	.bss.checksum,"aw",%nobits
  725              		.align	3
  728              	checksum:
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 22
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 22
 
 
  729 0000 00000000 		.space	8
@@ -1283,36 +1283,36 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 1
  751              		.file 8 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_gpio.h"
  752              		.file 9 "Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h"
  753              		.file 10 "<built-in>"
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s 			page 23
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s 			page 23
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:19     .text.MX_GPIO_Init:00000000 $t
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:114    .text.MX_GPIO_Init:0000005c $d
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:122    .text.calculate_mandelbrot_fixed_point_arithmetic:00000000 $t
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:128    .text.calculate_mandelbrot_fixed_point_arithmetic:00000000 calculate_mandelbrot_fixed_point_arithmetic
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:426    .text.calculate_mandelbrot_fixed_point_arithmetic:0000015c $d
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:436    .text.calculate_mandelbrot_double:00000000 $t
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:442    .text.calculate_mandelbrot_double:00000000 calculate_mandelbrot_double
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:465    .text.Error_Handler:00000000 $t
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:471    .text.Error_Handler:00000000 Error_Handler
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:503    .text.SystemClock_Config:00000000 $t
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:509    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:596    .text.main:00000000 $t
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:602    .text.main:00000000 main
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:696    .text.main:0000006c $d
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:742    .bss.start_time:00000000 start_time
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:710    .data.side_length:00000000 side_length
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:728    .bss.checksum:00000000 checksum
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:735    .bss.end_time:00000000 end_time
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:721    .bss.execution_time:00000000 execution_time
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:707    .data.side_length:00000000 $d
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:718    .bss.execution_time:00000000 $d
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:725    .bss.checksum:00000000 $d
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:732    .bss.end_time:00000000 $d
-C:\Users\danie\AppData\Local\Temp\ccyvyDM6.s:739    .bss.start_time:00000000 $d
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:19     .text.MX_GPIO_Init:00000000 $t
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:24     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:114    .text.MX_GPIO_Init:0000005c $d
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:122    .text.calculate_mandelbrot_fixed_point_arithmetic:00000000 $t
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:128    .text.calculate_mandelbrot_fixed_point_arithmetic:00000000 calculate_mandelbrot_fixed_point_arithmetic
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:426    .text.calculate_mandelbrot_fixed_point_arithmetic:0000015c $d
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:436    .text.calculate_mandelbrot_double:00000000 $t
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:442    .text.calculate_mandelbrot_double:00000000 calculate_mandelbrot_double
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:465    .text.Error_Handler:00000000 $t
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:471    .text.Error_Handler:00000000 Error_Handler
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:503    .text.SystemClock_Config:00000000 $t
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:509    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:596    .text.main:00000000 $t
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:602    .text.main:00000000 main
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:696    .text.main:0000006c $d
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:742    .bss.start_time:00000000 start_time
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:710    .data.side_length:00000000 side_length
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:728    .bss.checksum:00000000 checksum
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:735    .bss.end_time:00000000 end_time
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:721    .bss.execution_time:00000000 execution_time
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:707    .data.side_length:00000000 $d
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:718    .bss.execution_time:00000000 $d
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:725    .bss.checksum:00000000 $d
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:732    .bss.end_time:00000000 $d
+C:\Users\danie\AppData\Local\Temp\ccd3GB2c.s:739    .bss.start_time:00000000 $d
 
 UNDEFINED SYMBOLS
 memset
