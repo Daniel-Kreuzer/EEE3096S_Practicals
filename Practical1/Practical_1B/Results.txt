@@ -1,0 +1,12 @@
+Python Programme
+128x128    | 0.071 s | 429384   | mandelbrot_128×128.png
+160x160    | 0.117 s | 669829   | mandelbrot_160×160.png
+192x192    | 0.155 s | 966024   | mandelbrot_192×192.png
+224x224    | 0.231 s | 1314999  | mandelbrot_224×224.png
+256x256    | 0.290 s | 1715812  | mandelbrot_256×256.png
+Micoprocessor Fixed Point Integers
+128x128    | 21.954s | 429184   | mandelbrot_128×128.png
+160x160    | 34.321s | 670352   | mandelbrot_160×160.png
+192x192    | 49.449s | 966510   | mandelbrot_192×192.png
+224x224    | 67.274s | 1314641  | mandelbrot_224×224.png
+256x256    | 87.826s | 1715946  | mandelbrot_256×256.png
