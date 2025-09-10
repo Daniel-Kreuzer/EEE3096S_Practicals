@@ -21,9 +21,10 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdint.h>
+#include "stm32f4xx.h"
 /* USER CODE END Includes */
-
+#define MAX_ITER 100
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 
@@ -31,7 +32,11 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+//TODO: Define and initialise the global varibales required
+uint32_t start_time, end_time;
+uint64_t checksum;
+uint32_t execution_time;
+int side_length[] = {128, 160, 192, 224, 256};
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -49,7 +54,8 @@
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
-
+uint64_t calculate_mandelbrot_fixed_point_arithmetic(int width, int height, int max_iterations);
+uint64_t calculate_mandelbrot_double(int width, int height, int max_iterations);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -86,7 +92,28 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
+  //TODO: Turn on LED 0 to signify the start of the operation
+    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+  //TODO: Record the start time
+  start_time=HAL_GetTick();
 
+  //TODO: Call the Mandelbrot Function and store the output in the checksum variable defined initially
+  checksum = calculate_mandelbrot_fixed_point_arithmetic(side_length[4],side_length[4],MAX_ITER);
+
+  //TODO: Record the end time
+  end_time=HAL_GetTick();
+
+  //TODO: Calculate the execution time
+  execution_time= end_time-start_time;
+
+  //TODO: Turn on LED 1 to signify the end of the operation
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
+
+  //TODO: Hold the LEDs on for a 1s delay
+  HAL_Delay(1000);
+  //TODO: Turn off the LEDs
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -99,10 +126,10 @@ int main(void)
     /* USER CODE BEGIN 3 */
 	  // Toggle the LEDs with a 1s delay
 	  // Code to check if the board is working
-	  	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3
+	  	  /*HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3
 	                            |GPIO_PIN_4|GPIO_PIN_5|GPIO_PIN_6|GPIO_PIN_7);
 
-	  	  HAL_Delay(1000);
+	  	  HAL_Delay(1000);*/
   }
   /* USER CODE END 3 */
 }
@@ -179,9 +206,52 @@ static void MX_GPIO_Init(void)
 /* USER CODE END MX_GPIO_Init_2 */
 }
 
-/* USER CODE BEGIN 4 */
+uint64_t calculate_mandelbrot_fixed_point_arithmetic(int width, int height, int max_iterations){
+  uint64_t mandelbrot_sum = 0;
+  int scale = 16384;
+    //TODO: Complete the function implementation
+    for (int y=0; y<height; y++) {
+    	for (int x=0; x<width; x++) {
+    		int64_t x0 = ((int64_t)x*scale*35)/(width*10)-(25*scale)/10;
+    		int64_t y0 = ((int64_t)y*scale*2)/(height)-scale;
 
-/* USER CODE END 4 */
+
+    		int64_t xi=0;
+    		int64_t yi=0;
+    		int iteration =0;
+    		while (iteration<max_iterations && (((xi*xi)/scale)+((yi*yi)/scale)<=4*scale)) { // Dividing by the scale ensures we aren't...
+    			int64_t tmp = ((xi*xi)/scale)-((yi*yi)/scale); // ...also squaring the scale
+    			yi=((2*xi*yi)/scale)+y0;
+    			xi=tmp+x0;
+    			iteration++;
+    		}
+    		mandelbrot_sum+=iteration;
+    	}
+    }
+    return mandelbrot_sum;
+
+}
+//TODO: Mandelbroat using variable type double
+uint64_t calculate_mandelbrot_double(int width, int height,int max_iterations){
+	uint64_t mandelbrot_sum = 0;
+	//TODO: Complete the function implementation
+	for (int y = 0; y < height; y++){
+		for (int x = 0; x < width; x++){
+			double x_zero = ((double) x/width)*3.5 - 2.5;
+			double y_zero = ((double) y/height)*2.0 - 1.0;
+			double x_i = 0, y_i = 0;
+			int iteration = 0;
+			while (iteration < max_iterations && (x_i*x_i+y_i*y_i <= 4)) {
+				double temp = x_i*x_i - y_i*y_i;
+				y_i = 2*x_i*y_i + y_zero;
+				x_i = temp + x_zero;
+				iteration = iteration + 1;
+			}
+			mandelbrot_sum = mandelbrot_sum + iteration;
+		}
+	}
+return mandelbrot_sum;
+}
 
 /**
   * @brief  This function is executed in case of error occurrence.
