@@ -6,30 +6,30 @@ Image size = 224; execution time = 72084;checksum = 1425684;
 Image size = 256; execution time = 94106;checksum = 1860908;
 --------------------------------------------------
 MAX_ITERATION=240
-Image size = 128; execution time = ;checksum = ;
-Image size = 160; execution time = ;checksum = ;
-Image size = 192; execution time = ;checksum = ;
-Image size = 224; execution time = ;checksum = ;
-Image size = 256; execution time = ;checksum = ;
+Image size = 128; execution time = 43684;checksum = 930866;
+Image size = 160; execution time = 68369;checksum = 1456387;
+Image size = 192; execution time = 98604;checksum = 2101303;
+Image size = 224; execution time = 134045;checksum = 2856122;
+Image size = 256; execution time = 174992;checksum = 3728244;
 --------------------------------------------------
 MAX_ITERATION=490
-Image size = 128; execution time = ;checksum = ;
-Image size = 160; execution time = ;checksum = ;
-Image size = 192; execution time = ;checksum = ;
-Image size = 224; execution time = ;checksum = ;
-Image size = 256; execution time = ;checksum = ;
+Image size = 128; execution time = 82223;checksum = 1820650;
+Image size = 160; execution time = 128491;checksum = 2844474;
+Image size = 192; execution time = 185563;checksum = 4108951;
+Image size = 224; execution time = 252164;checksum = 5583161;
+Image size = 256; execution time = 329413;checksum = 7293330;
 --------------------------------------------------
 MAX_ITERATION=700
-Image size = 128; execution time = ;checksum = ;
-Image size = 160; execution time = ;checksum = ;
-Image size = 192; execution time = ;checksum = ;
-Image size = 224; execution time = ;checksum = ;
-Image size = 256; execution time = ;checksum = ;
+Image size = 128; execution time = 114532;checksum = 2566622;
+Image size = 160; execution time = 178810;checksum = 4006245;
+Image size = 192; execution time = 258435;checksum = 5791401;
+Image size = 224; execution time = 351107;checksum = 7867550;
+Image size = 256; execution time = 458778;checksum = 10280064;
 --------------------------------------------------
 MAX_ITERATION=900
-Image size = 128; execution time = ;checksum = ;
-Image size = 160; execution time = ;checksum = ;
-Image size = 192; execution time = ;checksum = ;
-Image size = 224; execution time = ;checksum = ;
-Image size = 256; execution time = ;checksum = ;
+Image size = 128; execution time = 145267;checksum = 3276268;
+Image size = 160; execution time = 226680;checksum = 5111489;
+Image size = 192; execution time = 327740;checksum = 7391528;
+Image size = 224; execution time = 445203;checksum = 10040024;
+Image size = 256; execution time = 581812;checksum = 13120662;
 --------------------------------------------------
