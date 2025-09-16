@@ -24,7 +24,7 @@
 #include <stdint.h>
 #include "stm32f4xx.h"
 /* USER CODE END Includes */
-#define MAX_ITER 100
+#define MAX_ITER 900
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 

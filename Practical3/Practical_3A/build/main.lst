@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -53,12 +53,12 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
   24:Core/Src/main.c **** #include <stdint.h>
   25:Core/Src/main.c **** #include "stm32f4xx.h"
   26:Core/Src/main.c **** /* USER CODE END Includes */
-  27:Core/Src/main.c **** #define MAX_ITER 100
+  27:Core/Src/main.c **** #define MAX_ITER 900
   28:Core/Src/main.c **** /* Private typedef -----------------------------------------------------------*/
   29:Core/Src/main.c **** /* USER CODE BEGIN PTD */
   30:Core/Src/main.c **** 
   31:Core/Src/main.c **** /* USER CODE END PTD */
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 2
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 2
 
 
   32:Core/Src/main.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
   86:Core/Src/main.c ****   SystemClock_Config();
   87:Core/Src/main.c **** 
   88:Core/Src/main.c ****   /* USER CODE BEGIN SysInit */
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 3
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 3
 
 
   89:Core/Src/main.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  143:Core/Src/main.c ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
  144:Core/Src/main.c ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
  145:Core/Src/main.c **** 
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 4
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 4
 
 
  146:Core/Src/main.c ****   /** Configure the main internal regulator output voltage
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
   42              		.loc 1 185 20 is_stmt 0 view .LVU2
   43 0004 0024     		movs	r4, #0
   44 0006 0194     		str	r4, [sp, #4]
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 5
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 5
 
 
   45 0008 0294     		str	r4, [sp, #8]
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
   83 003a 0394     		str	r4, [sp, #12]
  202:Core/Src/main.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   84              		.loc 1 202 3 is_stmt 1 view .LVU16
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 6
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 6
 
 
   85              		.loc 1 202 25 is_stmt 0 view .LVU17
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  134 0004 8BB0     		sub	sp, sp, #44
  135              	.LCFI4:
  136              		.cfi_def_cfa_offset 80
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 7
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 7
 
 
  137 0006 0891     		str	r1, [sp, #32]
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  174              	.LVL6:
  226:Core/Src/main.c ****     			iteration++;
  175              		.loc 1 226 8 is_stmt 1 view .LVU33
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 8
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 8
 
 
  176              		.loc 1 226 17 is_stmt 0 view .LVU34
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  221 008c 6AEB0909 		sbc	r9, r10, r9
  222              	.LVL8:
  224:Core/Src/main.c ****     			xi=tmp+x0;
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 9
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 9
 
 
  223              		.loc 1 224 8 is_stmt 1 view .LVU45
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  269 00e2 18EB0303 		adds	r3, r8, r3
  270 00e6 0393     		str	r3, [sp, #12]
  271              	.LVL12:
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 10
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 10
 
 
  272              		.loc 1 228 21 view .LVU56
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  316              		.loc 1 216 21 is_stmt 0 view .LVU67
  317 013c 4FEAEB71 		asr	r1, fp, #31
  216:Core/Src/main.c **** 
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 11
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 11
 
 
  318              		.loc 1 216 37 view .LVU68
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  359 017a 5C46     		mov	r4, fp
  213:Core/Src/main.c ****     	for (int x=0; x<width; x++) {
  360              		.loc 1 213 30 is_stmt 1 discriminator 2 view .LVU82
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 12
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 12
 
 
  361 017c 0134     		adds	r4, r4, #1
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  407              		.loc 1 235 79 is_stmt 1 view -0
  408              		.cfi_startproc
  409              		@ args = 0, pretend = 0, frame = 56
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 13
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 13
 
 
  410              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  453 001e DDE90001 		ldrd	r0, [sp]
  454 0022 FFF7FEFF 		bl	__aeabi_dsub
  455              	.LVL25:
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 14
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 14
 
 
  456 0026 8246     		mov	r10, r0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  505 0064 2B46     		mov	r3, r5
  506 0066 2046     		mov	r0, r4
  507 0068 2946     		mov	r1, r5
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 15
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 15
 
 
  508 006a FFF7FEFF 		bl	__aeabi_dmul
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  555 00b4 9945     		cmp	r9, r3
  556 00b6 3ADA     		bge	.L30
  557              	.LBB17:
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 16
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 16
 
 
  240:Core/Src/main.c **** 			double y_zero = ((double) y/height)*2.0 - 1.0;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  603 00fe 2946     		mov	r1, r5
  604 0100 FFF7FEFF 		bl	__aeabi_ddiv
  605              	.LVL52:
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 17
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 17
 
 
  606 0104 0246     		mov	r2, r0
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  647 0138 9845     		cmp	r8, r3
  648 013a 05DA     		bge	.L31
  649              	.LBB18:
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 18
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 18
 
 
  239:Core/Src/main.c **** 			double x_zero = ((double) x/width)*3.5 - 2.5;
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  692              		.cfi_startproc
  693              		@ Volatile: function does not return.
  694              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 19
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 19
 
 
  695              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
   46:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_INLINE
   47:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_INLINE                        static inline
   48:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 20
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 20
 
 
   49:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_FORCEINLINE                 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  103:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic push
  104:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
  105:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 21
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 21
 
 
  106:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  265:Core/Src/main.c ****   while (1)
  715              		.loc 1 265 9 view .LVU156
  716 0002 FEE7     		b	.L35
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 22
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 22
 
 
  717              		.cfi_endproc
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  764              		.loc 1 148 3 view .LVU165
  765 0026 126C     		ldr	r2, [r2, #64]
  766 0028 02F08052 		and	r2, r2, #268435456
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 23
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 23
 
 
  767 002c 0092     		str	r2, [sp]
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  158:Core/Src/main.c ****   {
  805              		.loc 1 158 3 is_stmt 1 view .LVU182
  158:Core/Src/main.c ****   {
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 24
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 24
 
 
  806              		.loc 1 158 7 is_stmt 0 view .LVU183
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  845              		.cfi_restore_state
  160:Core/Src/main.c ****   }
  846              		.loc 1 160 5 is_stmt 1 view .LVU199
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 25
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 25
 
 
  847 007c FFF7FEFF 		bl	Error_Handler
@@ -1488,7 +1488,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  888              	.LVL67:
   96:Core/Src/main.c ****   //TODO: Record the start time
  889              		.loc 1 96 5 view .LVU205
- 890 000e 174C     		ldr	r4, .L47
+ 890 000e 184C     		ldr	r4, .L47
  891 0010 0122     		movs	r2, #1
  892 0012 1146     		mov	r1, r2
  893 0014 2046     		mov	r0, r4
@@ -1498,77 +1498,77 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  896              		.loc 1 98 3 view .LVU206
   98:Core/Src/main.c **** 
  897              		.loc 1 98 14 is_stmt 0 view .LVU207
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 26
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 26
 
 
  898 001a FFF7FEFF 		bl	HAL_GetTick
  899              	.LVL69:
   98:Core/Src/main.c **** 
  900              		.loc 1 98 13 discriminator 1 view .LVU208
- 901 001e 144D     		ldr	r5, .L47+4
+ 901 001e 154D     		ldr	r5, .L47+4
  902 0020 2860     		str	r0, [r5]
  101:Core/Src/main.c **** 
  903              		.loc 1 101 3 is_stmt 1 view .LVU209
  101:Core/Src/main.c **** 
  904              		.loc 1 101 14 is_stmt 0 view .LVU210
- 905 0022 144B     		ldr	r3, .L47+8
+ 905 0022 154B     		ldr	r3, .L47+8
  906 0024 1869     		ldr	r0, [r3, #16]
- 907 0026 6422     		movs	r2, #100
- 908 0028 0146     		mov	r1, r0
- 909 002a FFF7FEFF 		bl	calculate_mandelbrot_fixed_point_arithmetic
+ 907 0026 4FF46172 		mov	r2, #900
+ 908 002a 0146     		mov	r1, r0
+ 909 002c FFF7FEFF 		bl	calculate_mandelbrot_fixed_point_arithmetic
  910              	.LVL70:
  101:Core/Src/main.c **** 
  911              		.loc 1 101 12 discriminator 1 view .LVU211
- 912 002e 124B     		ldr	r3, .L47+12
- 913 0030 C3E90001 		strd	r0, [r3]
+ 912 0030 124B     		ldr	r3, .L47+12
+ 913 0032 C3E90001 		strd	r0, [r3]
  104:Core/Src/main.c **** 
  914              		.loc 1 104 3 is_stmt 1 view .LVU212
  104:Core/Src/main.c **** 
  915              		.loc 1 104 12 is_stmt 0 view .LVU213
- 916 0034 FFF7FEFF 		bl	HAL_GetTick
+ 916 0036 FFF7FEFF 		bl	HAL_GetTick
  917              	.LVL71:
  104:Core/Src/main.c **** 
  918              		.loc 1 104 11 discriminator 1 view .LVU214
- 919 0038 104B     		ldr	r3, .L47+16
- 920 003a 1860     		str	r0, [r3]
+ 919 003a 114B     		ldr	r3, .L47+16
+ 920 003c 1860     		str	r0, [r3]
  107:Core/Src/main.c **** 
  921              		.loc 1 107 3 is_stmt 1 view .LVU215
  107:Core/Src/main.c **** 
  922              		.loc 1 107 27 is_stmt 0 view .LVU216
- 923 003c 2B68     		ldr	r3, [r5]
- 924 003e C01A     		subs	r0, r0, r3
+ 923 003e 2B68     		ldr	r3, [r5]
+ 924 0040 C01A     		subs	r0, r0, r3
  107:Core/Src/main.c **** 
  925              		.loc 1 107 17 view .LVU217
- 926 0040 0F4B     		ldr	r3, .L47+20
- 927 0042 1860     		str	r0, [r3]
+ 926 0042 104B     		ldr	r3, .L47+20
+ 927 0044 1860     		str	r0, [r3]
  110:Core/Src/main.c **** 
  928              		.loc 1 110 3 is_stmt 1 view .LVU218
- 929 0044 0122     		movs	r2, #1
- 930 0046 0221     		movs	r1, #2
- 931 0048 2046     		mov	r0, r4
- 932 004a FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 929 0046 0122     		movs	r2, #1
+ 930 0048 0221     		movs	r1, #2
+ 931 004a 2046     		mov	r0, r4
+ 932 004c FFF7FEFF 		bl	HAL_GPIO_WritePin
  933              	.LVL72:
  113:Core/Src/main.c ****   //TODO: Turn off the LEDs
  934              		.loc 1 113 3 view .LVU219
- 935 004e 4FF47A70 		mov	r0, #1000
- 936 0052 FFF7FEFF 		bl	HAL_Delay
+ 935 0050 4FF47A70 		mov	r0, #1000
+ 936 0054 FFF7FEFF 		bl	HAL_Delay
  937              	.LVL73:
  115:Core/Src/main.c ****   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
  938              		.loc 1 115 3 view .LVU220
- 939 0056 0022     		movs	r2, #0
- 940 0058 0121     		movs	r1, #1
- 941 005a 2046     		mov	r0, r4
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 27
+ 939 0058 0022     		movs	r2, #0
+ 940 005a 0121     		movs	r1, #1
+ 941 005c 2046     		mov	r0, r4
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 27
 
 
- 942 005c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 942 005e FFF7FEFF 		bl	HAL_GPIO_WritePin
  943              	.LVL74:
  116:Core/Src/main.c ****   /* USER CODE END 2 */
  944              		.loc 1 116 3 view .LVU221
- 945 0060 0022     		movs	r2, #0
- 946 0062 0221     		movs	r1, #2
- 947 0064 2046     		mov	r0, r4
- 948 0066 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 945 0062 0022     		movs	r2, #0
+ 946 0064 0221     		movs	r1, #2
+ 947 0066 2046     		mov	r0, r4
+ 948 0068 FFF7FEFF 		bl	HAL_GPIO_WritePin
  949              	.LVL75:
  950              	.L45:
  121:Core/Src/main.c ****   {
@@ -1577,16 +1577,16 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  952              		.loc 1 133 3 view .LVU223
  121:Core/Src/main.c ****   {
  953              		.loc 1 121 9 view .LVU224
- 954 006a FEE7     		b	.L45
+ 954 006c FEE7     		b	.L45
  955              	.L48:
- 956              		.align	2
+ 956 006e 00BF     		.align	2
  957              	.L47:
- 958 006c 00040240 		.word	1073873920
- 959 0070 00000000 		.word	start_time
- 960 0074 00000000 		.word	side_length
- 961 0078 00000000 		.word	checksum
- 962 007c 00000000 		.word	end_time
- 963 0080 00000000 		.word	execution_time
+ 958 0070 00040240 		.word	1073873920
+ 959 0074 00000000 		.word	start_time
+ 960 0078 00000000 		.word	side_length
+ 961 007c 00000000 		.word	checksum
+ 962 0080 00000000 		.word	end_time
+ 963 0084 00000000 		.word	execution_time
  964              		.cfi_endproc
  965              	.LFE130:
  967              		.global	side_length
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  1000              		.section	.bss.start_time,"aw",%nobits
  1001              		.align	2
  1004              	start_time:
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 28
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 28
 
 
  1005 0000 00000000 		.space	4
@@ -1633,37 +1633,37 @@ ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 1
  1014              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
  1015              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
  1016              		.file 11 "<built-in>"
-ARM GAS  C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s 			page 29
+ARM GAS  C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s 			page 29
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:21     .text.MX_GPIO_Init:00000000 $t
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:26     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:101    .text.MX_GPIO_Init:0000004c $d
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:108    .text.calculate_mandelbrot_fixed_point_arithmetic:00000000 $t
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:114    .text.calculate_mandelbrot_fixed_point_arithmetic:00000000 calculate_mandelbrot_fixed_point_arithmetic
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:398    .text.calculate_mandelbrot_double:00000000 $t
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:404    .text.calculate_mandelbrot_double:00000000 calculate_mandelbrot_double
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:675    .text.calculate_mandelbrot_double:00000158 $d
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:683    .text.Error_Handler:00000000 $t
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:689    .text.Error_Handler:00000000 Error_Handler
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:721    .text.SystemClock_Config:00000000 $t
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:727    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:856    .text.SystemClock_Config:00000084 $d
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:862    .text.main:00000000 $t
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:868    .text.main:00000000 main
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:958    .text.main:0000006c $d
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:1004   .bss.start_time:00000000 start_time
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:972    .data.side_length:00000000 side_length
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:990    .bss.checksum:00000000 checksum
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:997    .bss.end_time:00000000 end_time
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:983    .bss.execution_time:00000000 execution_time
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:969    .data.side_length:00000000 $d
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:980    .bss.execution_time:00000000 $d
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:987    .bss.checksum:00000000 $d
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:994    .bss.end_time:00000000 $d
-C:\Users\danie\AppData\Local\Temp\ccB0lqJ8.s:1001   .bss.start_time:00000000 $d
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:21     .text.MX_GPIO_Init:00000000 $t
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:26     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:101    .text.MX_GPIO_Init:0000004c $d
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:108    .text.calculate_mandelbrot_fixed_point_arithmetic:00000000 $t
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:114    .text.calculate_mandelbrot_fixed_point_arithmetic:00000000 calculate_mandelbrot_fixed_point_arithmetic
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:398    .text.calculate_mandelbrot_double:00000000 $t
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:404    .text.calculate_mandelbrot_double:00000000 calculate_mandelbrot_double
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:675    .text.calculate_mandelbrot_double:00000158 $d
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:683    .text.Error_Handler:00000000 $t
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:689    .text.Error_Handler:00000000 Error_Handler
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:721    .text.SystemClock_Config:00000000 $t
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:727    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:856    .text.SystemClock_Config:00000084 $d
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:862    .text.main:00000000 $t
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:868    .text.main:00000000 main
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:958    .text.main:00000070 $d
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:1004   .bss.start_time:00000000 start_time
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:972    .data.side_length:00000000 side_length
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:990    .bss.checksum:00000000 checksum
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:997    .bss.end_time:00000000 end_time
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:983    .bss.execution_time:00000000 execution_time
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:969    .data.side_length:00000000 $d
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:980    .bss.execution_time:00000000 $d
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:987    .bss.checksum:00000000 $d
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:994    .bss.end_time:00000000 $d
+C:\Users\danie\AppData\Local\Temp\ccdYmbdr.s:1001   .bss.start_time:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin

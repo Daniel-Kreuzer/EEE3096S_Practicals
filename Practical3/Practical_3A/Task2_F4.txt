@@ -1,0 +1,35 @@
+MAX_ITERATION=110
+Image size = 128; execution time = 1869;checksum = 465398;
+Image size = 160; execution time = 2921;checksum = 727049;
+Image size = 192; execution time = 4213;checksum = 1048420;
+Image size = 224; execution time = 5727;checksum = 1425684;
+Image size = 256; execution time = 7478;checksum = 1860908;
+--------------------------------------------------
+MAX_ITERATION=240
+Image size = 128; execution time = 3428;checksum = 930866;
+Image size = 160; execution time = 5365;checksum = 1456387;
+Image size = 192; execution time = 7741;checksum = 2101303;
+Image size = 224; execution time = 10521;checksum = 2856122;
+Image size = 256; execution time = 13736;checksum = 3728244;
+--------------------------------------------------
+MAX_ITERATION=490
+Image size = 128; execution time = 6408;checksum = 1820650;
+Image size = 160; execution time = 10015;checksum = 2844474;
+Image size = 192; execution time = 14468;checksum = 4108951;
+Image size = 224; execution time = 19659;checksum = 5583161;
+Image size = 256; execution time = 25683;checksum = 7293330;
+--------------------------------------------------
+MAX_ITERATION=700
+Image size = 128; execution time = 8906;checksum = 2566622;
+Image size = 160; execution time = 13907;checksum = 4006245;
+Image size = 192; execution time = 20105;checksum = 5791401;
+Image size = 224; execution time = 27313;checksum = 7867550;
+Image size = 256; execution time = 10280064;checksum = 10280064;
+--------------------------------------------------
+MAX_ITERATION=900
+Image size = 128; execution time = 11283;checksum = 3276268;
+Image size = 160; execution time = 17610;checksum = 5111489;
+Image size = 192; execution time = 25466;checksum = 7391528;
+Image size = 224; execution time = 34593;checksum = 10040024;
+Image size = 256; execution time = 45211;checksum = 13120662;
+--------------------------------------------------
