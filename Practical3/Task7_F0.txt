@@ -1,0 +1,38 @@
+Python Programme
+128x128    | 0.071 s | 429384   | mandelbrot_128×128.png
+160x160    | 0.117 s | 669829   | mandelbrot_160×160.png
+192x192    | 0.155 s | 966024   | mandelbrot_192×192.png
+224x224    | 0.231 s | 1314999  | mandelbrot_224×224.png
+256x256    | 0.290 s | 1715812  | mandelbrot_256×256.png
+--------------------------------------------------------
+STM32F0
+Scaling Factor: 16384
+128x128    | 3.799 s | 429184   | mandelbrot_128×128.png
+160x160    | 5.933 s | 670352   | mandelbrot_160×160.png
+192x192    | 8.547 s | 966510   | mandelbrot_192×192.png
+224x224    | 11.636 s | 1314641  | mandelbrot_224×224.png
+256x256    | 15.198 s | 1715946  | mandelbrot_256×256.png
+
+STM32F0
+Scaling Factor: 1000
+128x128    | 18.552 s | 429184   | mandelbrot_128×128.png
+160x160    | 28.996 s | 670352   | mandelbrot_160×160.png
+192x192    | 41.755 s | 966510   | mandelbrot_192×192.png
+224x224    | 56.912 s | 1314641  | mandelbrot_224×224.png
+256x256    | 74.304 s | 1715946  | mandelbrot_256×256.png
+
+STM32F0
+Scaling Factor: 10000
+128x128    | 20.834 s | 429902   | mandelbrot_128×128.png
+160x160    | 32.528 s | 670792   | mandelbrot_160×160.png
+192x192    | 46.878 s | 966180   | mandelbrot_192×192.png
+224x224    | 63.830 s | 1315182  | mandelbrot_224×224.png
+256x256    | 83.367 s | 1716795  | mandelbrot_256×256.png
+
+STM32F0
+Scaling Factor: 1000000
+128x128    | 22.227 s | 429346   | mandelbrot_128×128.png
+160x160    | 34.718 s | 669809   | mandelbrot_160×160.png
+192x192    | 50.112 s | 966227   | mandelbrot_192×192.png
+224x224    | 68.249 s | 1315085  | mandelbrot_224×224.png
+256x256    | 89.102 s | 1715815  | mandelbrot_256×256.png
