@@ -18,6 +18,9 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "stm32f4xx.h"
+#define MAX_ITER 100
+#define Number_Iterations 5
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -43,6 +46,11 @@
 
 /* USER CODE BEGIN PV */
 //TODO: Define variables you think you might need
+uint32_t start_time[5], end_time[5];
+uint32_t cycleCount[5];
+uint64_t checksum[5];
+uint32_t execution_time[5];
+int side_length[] = {128, 160, 192, 224, 256};
 // - Performance timing variables (e.g execution time, throughput, pixels per second, clock cycles)
 
 /* USER CODE END PV */
@@ -52,7 +60,8 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
 //TODO: Define any function prototypes you might need such as the calculate Mandelbrot function among others
-
+uint64_t calculate_mandelbrot_fixed_point_arithmetic(int width, int height, int max_iterations);
+uint64_t calculate_mandelbrot_double(int width, int height, int max_iterations);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -100,20 +109,71 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  for (int  i=0; i<Number_Iterations; i++) {
 	  //TODO: Visual indicator: Turn on LED0 to signal processing start
-
-
-	  //TODO: Benchmark and Profile Performance
-
-
-	  //TODO: Visual indicator: Turn on LED1 to signal processing start
-
-
-	  //TODO: Keep the LEDs ON for 2s
-
-	  //TODO: Turn OFF LEDs
+	  	  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+	  	//TODO: Benchmark and Profile Performance
+	  	  start_time[i]=HAL_GetTick();
+	  	  CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+	  	  DWT->CYCCNT = 0;
+	  	  DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+	  	  checksum[i] = calculate_mandelbrot_double(side_length[i],side_length[i],MAX_ITER);
+	  	  cycleCount[i] = DWT -> CYCCNT;
+	  	  end_time[i]=HAL_GetTick();
+	  	  execution_time[i]=end_time[i]-start_time[i];
+	  	//TODO: Keep the LEDs ON for 2s
+	  	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
+	  	HAL_Delay(2000);
+	  	// TODO: Turn OFF LEDs
+	  	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_RESET);
+	  	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
+	  }
   }
+}
   /* USER CODE END 3 */
+
+uint64_t calculate_mandelbrot_fixed_point_arithmetic(int width, int height, int max_iterations){
+  uint64_t mandelbrot_sum = 0;
+  int scale = 16384;
+    //TODO: Complete the function implementation
+    for (int y=0; y<height; y++) {
+    	for (int x=0; x<width; x++) {
+    		int64_t x0 = ((int64_t)x*scale*35)/(width*10)-(25*scale)/10;
+    		int64_t y0 = ((int64_t)y*scale*2)/(height)-scale;
+
+
+    		int64_t xi=0;
+    		int64_t yi=0;
+    		int iteration =0;
+    		while (iteration<max_iterations && (((xi*xi)/scale)+((yi*yi)/scale)<=4*scale)) { // Dividing by the scale ensures we aren't...
+    			int64_t tmp = ((xi*xi)/scale)-((yi*yi)/scale); // ...also squaring the scale
+    			yi=((2*xi*yi)/scale)+y0;
+    			xi=tmp+x0;
+    			iteration++;
+    		}
+    		mandelbrot_sum+=iteration;
+    	}
+    }
+    return mandelbrot_sum;
+
+}
+uint64_t calculate_mandelbrot_double(int width, int height,int max_iterations){
+	uint64_t mandelbrot_sum = 0; //TODO: Complete the function implementation
+	for (int y = 0; y < height; y++){
+			for (int x = 0; x < width; x++){
+				double x_zero = ((double) x/width)*3.5 - 2.5;
+				double y_zero = ((double) y/height)*2.0 - 1.0;
+				double x_i = 0, y_i = 0; int iteration = 0;
+				while (iteration < max_iterations && (x_i*x_i+y_i*y_i <= 4)) {
+					double temp = x_i*x_i - y_i*y_i;
+					y_i = 2*x_i*y_i + y_zero;
+					x_i = temp + x_zero;
+					iteration = iteration + 1;
+				}
+				mandelbrot_sum = mandelbrot_sum + iteration;
+			}
+	}
+	return mandelbrot_sum;
 }
 
 /**
