@@ -34,9 +34,9 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 // TODO: Add values for below variables
-#define NS        // Number of samples in LUT
-#define TIM2CLK   // STM Clock frequency: Hint You might want to check the ioc file
-#define F_SIGNAL  	// Frequency of output analog signal
+#define NS 256      // Number of samples in LUT
+#define TIM2CLK 16000000  // STM Clock frequency: Hint You might want to check the ioc file
+#define F_SIGNAL 440  	// Frequency of output analog signal
 
 /* USER CODE END PD */
 
@@ -218,7 +218,7 @@ uint32_t Drum_LUT = {2047.000000, 139.000000, 3442.000000, 2221.000000, 1882.000
 		1967.000000, 2070.000000, 2046.000000, 964.000000, 2843.000000, 2726.000000, 1886.000000};
 
 // TODO: Equation to calculate TIM2_Ticks
-uint32_t TIM2_Ticks = 0; // How often to write new LUT value
+uint32_t TIM2_Ticks = 142; // How often to write new LUT value
 uint32_t DestAddress = (uint32_t) &(TIM3->CCR3); // Write LUT TO TIM3->CCR3 to modify PWM duty cycle
 
 
