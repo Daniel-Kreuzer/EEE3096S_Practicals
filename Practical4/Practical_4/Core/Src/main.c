@@ -41,6 +41,7 @@
 #define F_SIGNAL 244  	// Frequency of output analog signal
 #define NUM_WAVEFORMS 6
 #define DEBOUNCE_DELAY_MS 50
+#define DAC_MAX_12B 4095u //max LUT amplitude
 
 char* waveform_names[NUM_WAVEFORMS] = {"Sine", "Sawtooth", "Triangular", "Piano", "Guitar", "Drum"};
 
@@ -455,7 +456,7 @@ static void MX_TIM3_Init(void)
   htim3.Instance = TIM3;
   htim3.Init.Prescaler = 0;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 65535;
+  htim3.Init.Period = DAC_MAX_12B;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
