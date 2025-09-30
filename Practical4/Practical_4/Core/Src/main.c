@@ -61,7 +61,7 @@ DMA_HandleTypeDef hdma_tim2_ch1;
 
 /* USER CODE BEGIN PV */
 // TODO: Add code for global variables, including LUTs
-uint32_t Sin_LUT[NS] = {2047, 2097, 2147, 2198, 2248, 2298, 2347,
+const uint32_t Sin_LUT[NS] = {2047, 2097, 2147, 2198, 2248, 2298, 2347,
 	2397, 2446, 2496, 2545, 2593, 2641, 2689, 2737, 2784,
 	2831, 2877, 2922, 2968, 3012, 3056, 3100, 3142, 3185,
 	3226, 3267, 3307, 3346, 3384, 3422, 3459, 3495, 3530,
@@ -90,7 +90,7 @@ uint32_t Sin_LUT[NS] = {2047, 2097, 2147, 2198, 2248, 2298, 2347,
 	1405, 1453, 1501, 1549, 1598, 1648, 1697, 1747, 1796, 1846,
 	1896, 1947, 1997};
 
-uint32_t Saw_LUT[NS] = {0, 16, 32, 48, 64, 80, 96, 112, 128,
+const uint32_t Saw_LUT[NS] = {0, 16, 32, 48, 64, 80, 96, 112, 128,
 	144, 160, 176, 192, 208, 224, 240, 256, 273, 289,
 	305, 321, 337, 353, 369, 385, 401, 417, 433, 449,
 	465, 481, 497, 513, 529, 546, 562, 578, 594, 610,
@@ -117,7 +117,7 @@ uint32_t Saw_LUT[NS] = {0, 16, 32, 48, 64, 80, 96, 112, 128,
 	3838, 3854, 3870, 3886, 3902, 3918, 3934, 3950, 3966, 3982,
 	3998, 4014, 4030, 4046, 4062, 4078, 4095};
 
-uint32_t Triangle_LUT[NS] = {0, 31, 63, 95, 127, 159, 191, 223, 255,
+const uint32_t Triangle_LUT[NS] = {0, 31, 63, 95, 127, 159, 191, 223, 255,
 	287, 319, 351, 383, 415, 447, 479, 511, 543, 575,
 	607, 639, 671, 703, 735, 767, 799, 831, 863, 895,
 	927, 959, 991, 1023, 1055, 1087, 1119, 1151, 1183, 1215,
@@ -144,7 +144,7 @@ uint32_t Triangle_LUT[NS] = {0, 31, 63, 95, 127, 159, 191, 223, 255,
 	479, 447, 415, 383, 351, 319, 287, 255, 223, 191, 159,
 	127, 95, 63, 31};
 
-uint32_t Piano_LUT[NS] = {1901, 984, 2131, 1887, 1896, 1979, 1888, 1941, 1872,
+const uint32_t Piano_LUT[NS] = {1901, 984, 2131, 1887, 1896, 1979, 1888, 1941, 1872,
 		1878, 1909, 1903, 1876, 1965, 1790, 1783, 1842, 1889, 2163,
 		1892, 1817, 1731, 1929, 1637, 1778, 1858, 2306, 1820, 1801,
 		2746, 1853, 1691, 1901, 1827, 1835, 1910, 1895, 1774, 1872,
@@ -172,7 +172,7 @@ uint32_t Piano_LUT[NS] = {1901, 984, 2131, 1887, 1896, 1979, 1888, 1941, 1872,
 		1350, 2255, 1922, 2231, 2199, 2134, 1992
 };
 
-uint32_t Guitar_LUT[NS] = {1970, 2182, 1907, 2239, 1849, 1914, 2075, 1897, 1970,
+const uint32_t Guitar_LUT[NS] = {1970, 2182, 1907, 2239, 1849, 1914, 2075, 1897, 1970,
 		2029, 1824, 2213, 1893, 1803, 1598, 1860, 2175, 1849, 1958,
 		2057, 1943, 1940, 1980, 1953, 2020, 1978, 2091, 1750, 1968,
 		1989, 1967, 1986, 1967, 1827, 2670, 1815, 2173, 1776, 1834,
@@ -199,7 +199,7 @@ uint32_t Guitar_LUT[NS] = {1970, 2182, 1907, 2239, 1849, 1914, 2075, 1897, 1970,
 		2517, 2306, 2351, 1597, 1925, 2107, 1729, 2445, 1684, 1863,
 		2078, 2087, 2416, 1697, 654, 2118, 1997};
 
-uint32_t Drum_LUT[NS] = {2047, 139, 3442, 2221, 1882, 1687, 2226, 1991, 2024,
+const uint32_t Drum_LUT[NS] = {2047, 139, 3442, 2221, 1882, 1687, 2226, 1991, 2024,
 		4095, 3246, 2552, 1866, 1755, 2171, 2012, 2048, 3437, 2152,
 		2174, 2084, 2045, 2043, 2046, 2053, 730, 924, 1813, 2549,
 		1815, 2214, 1951, 2008, 1811, 1963, 2099, 2047, 2059, 2035,
@@ -227,9 +227,9 @@ uint32_t Drum_LUT[NS] = {2047, 139, 3442, 2221, 1882, 1687, 2226, 1991, 2024,
 		1967, 2070, 2046, 964, 2843, 2726, 1886};
 
 // TODO: Equation to calculate TIM2_Ticks
-uint32_t TIM2_Ticks = 142; // How often to write new LUT value
-
-uint32_t* waveform_LUTs[NUM_WAVEFORMS] = {Sin_LUT, Saw_LUT, Triangle_LUT, Piano_LUT, Guitar_LUT, Drum_LUT};
+uint32_t TIM2_Ticks = 256; // How often to write new LUT value (or rather what you need timer 2 to count up to) Formula: TIM2CLKSPEED/(Fsignal*NS)
+uint32_t DestAddress = (uint32_t) &(TIM3->CCR3); // Write LUT TO TIM3->CCR3 to modify PWM duty cycle
+uint32_t *waveform_LUTs[NUM_WAVEFORMS] = {Sin_LUT, Saw_LUT, Triangle_LUT, Piano_LUT, Guitar_LUT, Drum_LUT};
 
 /* USER CODE END PV */
 
@@ -281,15 +281,18 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  // TODO: Start TIM3 in PWM mode on channel 3
+  // TODO: Start TIM3 in PWM mode on channel 3h
+  HAL_TIM_Base_Start(&htim3);
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
-
   // TODO: Start TIM2 in Output Compare (OC) mode on channel 1
+  htim2.Init.Period = TIM2_Ticks - 1;
+  HAL_TIM_Base_Init(&htim2);
+  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, TIM2_Ticks / 2u);
   HAL_TIM_OC_Start(&htim2, TIM_CHANNEL_1);
 
   // TODO: Start DMA in IT mode on TIM2->CH1. Source is LUT and Dest is TIM3->CCR3; start with Sine LUT
-  uint32_t DestAddress = (uint32_t) &(TIM3->CCR3); // Write LUT TO TIM3->CCR3 to modify PWM duty cycle
   HAL_DMA_Start_IT(&hdma_tim2_ch1, (uint32_t)Sin_LUT, (uint32_t)&TIM3->CCR3, NS);
+  __HAL_TIM_ENABLE_DMA(&htim2, TIM_DMA_CC1);
 
   // TODO: Write current waveform to LCD(Sine is the first waveform)
   init_LCD();
@@ -587,8 +590,6 @@ void EXTI0_IRQHandler(void)
 	lcd_command(CLEAR);
 	lcd_putstring("Waveform: ");
 	lcd_putstring(waveform_names[current_waveform]);
-
-
 }
 /* USER CODE END 4 */
 
