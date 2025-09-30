@@ -227,7 +227,7 @@ const uint32_t Drum_LUT[NS] = {2047, 139, 3442, 2221, 1882, 1687, 2226, 1991, 20
 		1967, 2070, 2046, 964, 2843, 2726, 1886};
 
 // TODO: Equation to calculate TIM2_Ticks
-uint32_t TIM2_Ticks = 256; // How often to write new LUT value (or rather what you need timer 2 to count up to) Formula: TIM2CLKSPEED/(Fsignal*NS)
+uint32_t TIM2_Ticks = (uint32_t)(TIM2CLK/(Fsignal*NS)); // How often to write new LUT value (or rather what you need timer 2 to count up to)
 uint32_t DestAddress = (uint32_t) &(TIM3->CCR3); // Write LUT TO TIM3->CCR3 to modify PWM duty cycle
 uint32_t *waveform_LUTs[NUM_WAVEFORMS] = {Sin_LUT, Saw_LUT, Triangle_LUT, Piano_LUT, Guitar_LUT, Drum_LUT};
 
